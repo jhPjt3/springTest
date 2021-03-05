@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Goods">
+
+	<resultMap id="resultGoods" type="Goods">
+		<id property="code" column="CODE"/>
+		<result property="name" column="NAME"/>
+		<result property="price" column="PRICE"/>
+		<result property="color" column="COLOR"/>
+	</resultMap>
+	
+	<!-- goods table의 모든 데이터 select -->
+	<select id="selectGoodsAll" resultMap="resultGoods">
+		SELECT * FROM GOODS
+	</select>
+	
+	<!-- goods 하나만 가져오는 select -->
+	<select id="selectGoods" resultMap="resultGoods">
+		SELECT * FROM GOODS WHERE CODE = #{code}
+	</select>
+	
+	<!-- goods insert -->
+	<insert id="insertGoods" parameterType="Goods">
+		INSERT INTO GOODS VALUES(#{code},#{name},#{price},#{color})
+	</insert>
+	
+	<!-- goods delete -->
+	<delete id="deleteGoods" parameterType="Goods">
+		DELETE FROM GOODS WHERE CODE = #{code}
+	</delete>
+	
+	<!-- goods update -->
+	<update id="updateGoods" parameterType="Goods">
+		UPDATE GOODS SET CODE=#{code}, NAME=#{name}, PRICE=#{price}, COLOR=#{color}
+	</update>
+</mapper>

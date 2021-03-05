@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="TestBoardContent">
+
+	<resultMap id="resultTestBoardContent" type="TestBoardContent">
+	<id property="contentIdx" column="contentIdx"/>
+	<result property="contentSubject" column="contentSubject"/>
+	<result property="contentText" column="contentText"/>
+	<result property="contentFile" column="contentFile"/>
+	<result property="contentWriterIdx" column="contentWriterIdx"/>
+	<result property="contentBoardIdx" column="contentBoardIdx"/>
+	<result property="contentDate" column="contentDate"/>
+	</resultMap>
+	
+	
+</mapper>
